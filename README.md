@@ -1,6 +1,7 @@
-# lernbox
+# Basics
 
 ## Project setup
+
 ```
 yarn install
 ```

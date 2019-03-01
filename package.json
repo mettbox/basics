@@ -1,7 +1,18 @@
 {
-  "name": "lernbox",
+  "name": "basics",
   "version": "0.1.0",
-  "private": true,
+  "author": "Maik Mettenheimer",
+  "keywords": [
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mettbox/basics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mettbox/basics/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

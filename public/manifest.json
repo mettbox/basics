@@ -1,6 +1,6 @@
 {
-  "name": "lernbox",
-  "short_name": "lernbox",
+  "name": "basics",
+  "short_name": "basics",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

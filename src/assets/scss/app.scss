@@ -1,28 +1,124 @@
-@import "~bulma/sass/utilities/initial-variables";
-@import "~bulma/sass/utilities/functions";
-// 1. Set your own initial variables and derived 
-//    variables in _variables.scss
-@import "variables";
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
 
-// 2. Setup your Custom Colors
-$linkedin: #0077b5;
-$linkedin-invert: findColorInvert($linkedin);
-$twitter: #55acee;
-$twitter-invert: findColorInvert($twitter);
-$github: #333;
-$github-invert: findColorInvert($github);
+@import '_variables';
+@import '~bulma/sass/utilities/derived-variables';
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
 
-@import "~bulma/sass/utilities/derived-variables";
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-// 3. Add new color variables to the color map.
-$addColors: (
-  "twitter":($twitter, $twitter-invert),
-  "linkedin": ($linkedin, $linkedin-invert),
-  "github": ($github, $github-invert)
-);
-$colors: map-merge($colors, $addColors);
+a {
+  color: $grey;
+}
 
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    'logo logo score score'
+    'content content content content'
+    'footer footer footer footer'
+  ;
+  grid-gap: 20px 0;
+  align-items: center;
+  justify-items: center;
+}
 
-// 4. Provide custom buefy overrides and site styles here
+.logo {
+  grid-area: logo;
+  align-self: end;
+  justify-self: start;
+  margin: 1rem;
+  color: $blue;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1;
+  small {
+    color: $grey;
+  }
+}
+
+.score {
+  grid-area: score;
+  align-self: end;
+  justify-self: end;
+  margin: 1rem;
+  line-height: 1;
+  small {
+    color: $grey;
+  }
+}
+
+.main {
+  grid-area: content;
+  align-self: strech;
+}
+
+.hero {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input {
+  font-weight: bolder;
+}
+
+.button[disabled] {
+  opacity: .8;
+}
+
+.button {
+  transition: all 500ms;
+  &.start {
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.is-solution {
+  color: hsl(204, 86%, 53%)
+}
+
+.is-right {
+  color: hsl(171, 100%, 41%)
+}
+
+.is-wrong {
+  color: hsl(348, 100%, 61%)
+}
+
+.footer {
+  padding: 0;
+  background: none;
+  grid-area: footer;
+  align-self: center;
+  justify-self: center;
+  font-size: .75rem;
+  line-height: 1.1;
+  color: $grey;
+
+  a {
+    color: $grey;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    height: 2em;
+    width: auto;
+  }
+}
