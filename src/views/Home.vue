@@ -1,8 +1,6 @@
 <template>
   <div class="main-container">
-    <div class="logo">
-      <small>1x1</small>basics
-    </div>
+    <div class="logo">1x1</div>
     <div class="score" v-if="hasStarted">
       <small>Score:</small> {{score}}
     </div>
@@ -33,7 +31,10 @@
             <div class="box">
               <div v-if="hasStarted" class="field">
                 <div class="control">
-                  <input v-model="input" v-on:keyup.enter="submit()" class="input is-large has-text-centered" type="text" placeholder="?" autofocus="">
+                  <input v-model="input" v-on:keyup.enter="submit()"
+                    class="input is-large has-text-centered"
+                    type="number" min="0" inputmode="numeric" pattern="[0-9]*"
+                    placeholder="?" autofocus="">
                 </div>
               </div>
               <button @click="submit()" :disabled='disableSubmit' class="button is-large" v-bind:class="btnClassObject">
