@@ -62,7 +62,7 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'HomeView',
   data: function () {
     return {
       hasStarted: false,

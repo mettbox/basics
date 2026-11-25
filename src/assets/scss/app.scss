@@ -1,10 +1,9 @@
-@import '~bulma/sass/utilities/initial-variables';
-@import '~bulma/sass/utilities/functions';
+@import 'bulma/sass/utilities/initial-variables';
+@import 'bulma/sass/utilities/functions';
 
 @import '_variables';
-@import '~bulma/sass/utilities/derived-variables';
-@import '~bulma';
-@import '~buefy/src/scss/buefy';
+@import 'bulma/sass/utilities/derived-variables';
+@import 'bulma/bulma';
 
 html,
 body {
@@ -27,7 +26,8 @@ a {
 .main-container {
   display: grid;
   width: 100vw;
-  height: calc(100vh - 65px);
+  height: 100vh;
+  height: 100dvh;
   grid-template-rows: 60px 1fr 60px;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-areas:
@@ -41,7 +41,6 @@ a {
 }
 
 body.standalone .main-container {
-  height: 100vh;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
 }
